@@ -1,0 +1,14 @@
+// Utilities
+@use "./fonts";
+
+// Base styles
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-family: fonts.$Rubik;
+}
