@@ -1,5 +1,6 @@
 // Utilities
 @use "./fonts";
+@use "./colors";
 
 // Base styles
 * {
@@ -10,5 +11,7 @@
 }
 
 body {
+    background-color: colors.$Very-dark-blue;
+
     font-family: fonts.$Rubik;
 }
