@@ -123,7 +123,7 @@ export default {
     &__banner-icon {
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 20px;
 
         transform: translateY(-35%);
     }
