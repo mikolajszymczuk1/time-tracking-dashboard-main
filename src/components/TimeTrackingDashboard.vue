@@ -1,18 +1,17 @@
 <template>
     <div class="time-tracking-dashboard">
         <CardProfile full-name="Jeremy Robson" :avatar-image="avatarImage" />
-        <CardTime card-type="work" />
-        <CardTime card-type="play" />
-        <CardTime card-type="study" />
-        <CardTime card-type="exercise" />
-        <CardTime card-type="social" />
-        <CardTime card-type="self-care" />
+        <CardTime v-for="c in getCategories"
+            :key="c"
+            :card-type="c"
+        />
     </div>
 </template>
 
 <script>
 import CardProfile from "@/components/cards/CardProfile.vue";
 import CardTime from "@/components/cards/CardTime.vue";
+import { mapGetters } from "vuex";
 
 export default {
     name: "TimeTrackingDashboard",
@@ -24,6 +23,9 @@ export default {
         return {
             avatarImage: require("../assets/images/image-jeremy.png")
         }
+    },
+    computed: {
+        ...mapGetters(["getCategories"])
     }
 }
 </script>
