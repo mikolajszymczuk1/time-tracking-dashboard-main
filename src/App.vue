@@ -1,16 +1,16 @@
 <template>
-    <h1>Hello World !!!</h1>
+    <main>
+        <TimeTrackingDashboard />
+    </main>
 </template>
 
 <script>
+import TimeTrackingDashboard from "@/components/TimeTrackingDashboard.vue";
+
 export default {
-    name: "App"
+    name: "App",
+    components: {
+        TimeTrackingDashboard
+    }
 }
 </script>
-
-<style lang="scss" scoped>
-h1 {
-    font-size: 4em;
-    color: colors.$Violet;
-}
-</style>
