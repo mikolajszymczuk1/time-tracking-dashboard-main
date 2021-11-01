@@ -82,6 +82,10 @@ export default {
 
         overflow: hidden;
         border-radius: 15px 15px 0 0;
+    
+        @media screen and (min-width: 1024px) {
+            padding: 22px 0;
+        }
     }
 
     &__banner-icon {
@@ -97,6 +101,10 @@ export default {
 
         border-radius: 15px;
         background-color: colors.$Dark-blue;
+    
+        @media screen and (min-width: 1024px) {
+            padding: 30px 25px 34px 25px;
+        }
     }
 
     &__heading-part {
@@ -105,6 +113,10 @@ export default {
         align-items: center;
 
         margin-bottom: 10px;
+    
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 25px;
+        }
     }
 
     &__card-header {
@@ -117,12 +129,23 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (min-width: 1024px) {
+            align-items: flex-start;
+            flex-direction: column;
+        }
     }
 
     &__time {
         font-size: 2em;
         font-weight: 300;
         color: white;
+
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 12px;
+            
+            font-size: 3.3em;
+        }
     }
 
     &__last-time {

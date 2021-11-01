@@ -63,6 +63,15 @@ export default {
 
     background-color: colors.$Dark-blue;
     border-radius: 15px;
+
+    @media screen and (min-width: 600px) {
+        grid-column: 1 / 3;
+    }
+
+    @media screen and (min-width: 1024px) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
     
     // Top part
     &__main-part {
@@ -74,6 +83,12 @@ export default {
 
         background-color: colors.$Blue;
         border-radius: 15px;
+
+        @media screen and (min-width: 1024px) {
+            display: grid;
+
+            padding: 30px 30px 78px 30px;
+        }
     }
 
     &__avatar {
@@ -87,18 +102,36 @@ export default {
         background-size: cover;
         border-radius: 50%;
         border: solid 3px white;
+
+        @media screen and (min-width: 1024px) {
+            width: 85px;
+            height: 85px;
+
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
     }
 
     &__fullname {
-        color: colors.$Pale-Blue;
+        color: white;
         font-weight: 400;
         font-size: 1.5em;
         text-shadow: 0 0 3px rgba(colors.$Dark-blue, 0.2);
+    
+        @media screen and (min-width: 1024px) {
+            font-size: 2.5em;
+            font-weight: 300;
+        }
     }
 
     &__report-text {
         color: rgba(colors.$Pale-Blue, 0.8);
         font-size: 0.65em;
+    
+        @media screen and (min-width: 1024px) {
+            font-size: 0.4em;
+            font-weight: 400;
+        }
     }
 
     // Bottom part
@@ -111,11 +144,26 @@ export default {
 
         background-color: colors.$Dark-blue;
         border-radius: 0 0 15px 15px;
+
+        @media screen and (min-width: 1024px) {
+            align-items: flex-start;
+            flex-direction: column;
+
+            padding: 25px 30px 30px 30px;
+        }
     }
 
     &__timeframe-category {
         color: colors.$Desaturated-blue;
         font-size: 1.1em;
+    
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 23px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
     }
 
     &__input {
