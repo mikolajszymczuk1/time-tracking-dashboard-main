@@ -14,21 +14,21 @@
         <div class="card-profile__timeframes">
             <label class="card-profile__timeframe-category">
                 <input class="card-profile__input" type="radio" name="timeframe" value="daily"
-                    @input="changeTimeFrame('daily')"
+                    v-model="timeframe"
                 >
                 <span class="card-profile__category-name">Daily</span>
             </label>
 
             <label class="card-profile__timeframe-category">
                 <input class="card-profile__input" type="radio" name="timeframe" value="weekly"
-                    @input="changeTimeFrame('weekly')"
+                    v-model="timeframe"
                 >
                 <span class="card-profile__category-name">Weekly</span>
             </label>
 
             <label class="card-profile__timeframe-category">
                 <input class="card-profile__input" type="radio" name="timeframe" value="monthly"
-                    @input="changeTimeFrame('monthly')"
+                    v-model="timeframe"
                 >
                 <span class="card-profile__category-name">Monthly</span>
             </label>
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
     name: "CardProfile",
     props: {
@@ -49,10 +51,24 @@ export default {
             required: true
         }
     },
-    methods: {
-        changeTimeFrame(timeFrameName) {
-            console.log(timeFrameName);
+    data() {
+        return {
+            timeframe: ""
         }
+    },
+    watch: {
+        timeframe() {
+            this.changeTimeframe(this.timeframe);
+        }
+    },
+    computed: {
+        ...mapState({ currentTimeframe: state => state.currentTimeframe })
+    },
+    methods: {
+        ...mapActions(["changeTimeframe"])
+    },
+    created() {
+        this.timeframe = this.currentTimeframe;
     }
 }
 </script>
