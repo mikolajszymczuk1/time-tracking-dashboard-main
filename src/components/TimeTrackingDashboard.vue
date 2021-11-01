@@ -35,11 +35,14 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, auto);
-    row-gap: 25px;
-
-    width: 87%;
-
-    margin: 80px auto;
+    
+    @media screen and (min-width: 375px) {
+        row-gap: 25px;
+    
+        width: 87%;
+    
+        margin: 80px auto;
+    }
 
     @media screen and (min-width: 600px) {
         grid-template-columns: repeat(2, auto);

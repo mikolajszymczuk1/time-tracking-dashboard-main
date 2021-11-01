@@ -78,7 +78,10 @@ export default {
     $self: &;
 
     background-color: colors.$Dark-blue;
-    border-radius: 15px;
+    
+    @media screen and (min-width: 375px) {
+        border-radius: 15px;
+    }
 
     @media screen and (min-width: 600px) {
         grid-column: 1 / 3;
@@ -98,7 +101,10 @@ export default {
         padding: 30px 0;
 
         background-color: colors.$Blue;
-        border-radius: 15px;
+        
+        @media screen and (min-width: 375px) {
+            border-radius: 15px;
+        }
 
         @media screen and (min-width: 1024px) {
             display: grid;

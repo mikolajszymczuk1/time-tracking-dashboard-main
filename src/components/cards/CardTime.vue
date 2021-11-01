@@ -92,9 +92,11 @@ export default {
         "social": colors.$Violet,
         "self-care": colors.$Soft-orange,
     );
-
-    border-radius: 15px;
     
+    @media screen and (min-width: 375px) {
+        border-radius: 15px;
+    }
+
     @each $cardType, $color in $categoryColors {
         &--#{ $cardType }-theme {
             background-color: $color;
@@ -129,9 +131,12 @@ export default {
     &__content {
         padding: 30px 25px;
 
-        border-radius: 15px;
         background-color: colors.$Dark-blue;
-    
+
+        @media screen and (min-width: 375px) {
+            border-radius: 15px;
+        }
+
         @media screen and (min-width: 1024px) {
             padding: 30px 25px 34px 25px;
         }
