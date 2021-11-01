@@ -14,4 +14,12 @@ body {
     background-color: colors.$Very-dark-blue;
 
     font-family: fonts.$Rubik;
+
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+    }
 }
