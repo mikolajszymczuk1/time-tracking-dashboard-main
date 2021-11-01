@@ -12,13 +12,15 @@
 
         <div class="card-time__content">
             <div class="card-time__heading-part">
-                <h2 class="card-time__card-header">Work</h2>
+                <h2 class="card-time__card-header">{{ getCardData.title }}</h2>
                 <IconMenu />
             </div>
 
             <div class="card-time__time-part">
-                <h3 class=card-time__time>32hrs</h3>
-                <p class="card-time__last-time">Last Week - 36hrs</p>
+                <h3 class=card-time__time>{{ getCardData.currentTime }}hrs</h3>
+                <p class="card-time__last-time">
+                    Last {{ convertTimeframeName(currentTimeframe) }} - {{ getCardData.previousTime }}hrs
+                </p>
             </div>
         </div>
     </div>
@@ -26,6 +28,7 @@
 
 <script>
 import IconMenu from "@/components/icons/IconMenu.vue";
+import { mapState, mapGetters } from "vuex";
 
 export default {
     name: "CardTime",
@@ -45,6 +48,33 @@ export default {
                     "social",
                     "self-care"
                 ].indexOf(value) !== -1
+            }
+        }
+    },
+    computed: {
+        ...mapState({ currentTimeframe: state => state.currentTimeframe }),
+        ...mapGetters(["getSingleCategory"]),
+        getCardData() {
+            const data = this.getSingleCategory(this.cardType);
+            let timeframe = data.timeframes[this.currentTimeframe];
+            return {
+                title: data.title,
+                currentTime: timeframe.current,
+                previousTime: timeframe.previous
+            }
+        }
+    },
+    methods: {
+        convertTimeframeName(timeframe) {
+            switch(timeframe) {
+                case "daily":
+                    return "Day";
+                case "weekly":
+                    return "Week";
+                case "monthly":
+                    return "Month";
+                default:
+                    return "Time";
             }
         }
     }
