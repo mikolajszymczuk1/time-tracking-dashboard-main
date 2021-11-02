@@ -132,6 +132,11 @@ export default {
         padding: 30px 25px;
 
         background-color: colors.$Dark-blue;
+        cursor: pointer;
+
+        &:hover {
+            background-color: hsl(237, 40%, 28%);
+        }
 
         @media screen and (min-width: 375px) {
             border-radius: 15px;

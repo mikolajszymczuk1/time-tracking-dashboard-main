@@ -176,8 +176,14 @@ export default {
     }
 
     &__timeframe-category {
+        cursor: pointer;
+
         color: colors.$Desaturated-blue;
         font-size: 1.1em;
+
+        &:hover {
+            color: white;
+        }
     
         @media screen and (min-width: 1024px) {
             margin-bottom: 23px;
