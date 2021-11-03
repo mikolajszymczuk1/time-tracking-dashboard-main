@@ -9,10 +9,9 @@ const state = {
 }
 
 export const getters = {
-    toLowerCaseVersion: () => (text) => text.replace(" ", "-").toLowerCase(),
-    getCategories: (state, getters) => state.timeData.map(el => getters.toLowerCaseVersion(el.title)),
-    getSingleCategory: (state, getters) => (categoryName) => {
-        return state.timeData.filter(el => getters.toLowerCaseVersion(el.title) === categoryName)[0];
+    getCategories: (state) => state.timeData.map(el => el.title.replace(" ", "-").toLowerCase()),
+    getSingleCategory: (state) => (categoryName) => {
+        return state.timeData.filter(el => el.title.replace(" ", "-").toLowerCase() === categoryName)[0];
     }
 }
 
