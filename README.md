@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]()
-- Live Site URL: [Live]()
+- Solution URL: [Solution](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/hub/i-love-raspberries-iYRrCun7d)
+- Live Site URL: [Live](https://mystifying-hamilton-c28d2e.netlify.app/)
 
 ## My process
 
